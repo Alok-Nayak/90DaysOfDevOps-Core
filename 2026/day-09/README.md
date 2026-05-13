@@ -9,7 +9,9 @@ Figure out how to:
 - Set up shared directories with group permissions
 Use what you learned from Days 1-7 to find the right commands!
 
+
 ---
+
 
 ## Expected Output
 - A markdown file: `day-09-user-management.md`
