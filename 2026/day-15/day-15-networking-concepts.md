@@ -112,4 +112,23 @@ These are the private ip's of my system::
 
 ### 3. Run `ss -tulpn` — match at least 2 listening ports to their services
 
+From my `ss -tulpn` output, I found:
 
+- `127.0.0.54:53` --> DNS resolver service (`systemd-resolve`)
+- `127.0.0.1:631` --> Printing service / CUPS (`cupsd`)
+
+![ss -tulpn]()
+
+## Task 5: Putting It Together (Answer in 2–3 lines each:)
+### 1. You run `curl http://myapp.com:8080` — what networking concepts from today are involved?
+- When I run `curl http://myapp.com:8080`, DNS first resolves the domain name to an IP address.  
+Then connection is made to that IP using HTTP on port 8080 through TCP communication.
+
+### 2.  Your app can't reach a database at `10.0.1.50:3306` — what would you check first?
+- I would first check if `10.0.1.50` is reachable from my app server.  
+Then I would check if MySQL is running on port `3306`, firewall/security group rules, and database credentials.
+
+## My Learning
+1. DNS converts domain names into IP addresses so systems can communicate over the network.  
+2. Subnetting helps organize networks efficiently and improves network management.  
+3. Ports allow multiple services like SSH, HTTP, and MySQL to run on the same system.
