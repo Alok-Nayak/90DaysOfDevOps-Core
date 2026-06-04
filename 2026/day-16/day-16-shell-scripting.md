@@ -57,6 +57,7 @@
 
 ### Task 5: Combine It All
 Create `service_check.sh` that:
+
 1. Stores a service name in a variable (e.g., `nginx`, `sshd`)
 2. Asks the user: "Do you want to check the status? (y/n)"
 3. If `y` — runs `systemctl status <service>` and prints whether it's **active** or **not**
