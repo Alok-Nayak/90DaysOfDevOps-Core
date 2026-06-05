@@ -34,6 +34,7 @@ r = read (4), w = write (2), x = execute (1)
 
 
 ## Permission Changes
+
 ### Task 4: Modify Permissions
 1. Make script.sh executable → run it with ./script.sh
 2. Set devops.txt to read-only (remove write for all)
