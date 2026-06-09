@@ -128,7 +128,6 @@ All arguments: apple banana orange
 The script name: ./args_demo.sh
 ```
 
-
 ---
 
 ### Task 4: Install Packages via Script
