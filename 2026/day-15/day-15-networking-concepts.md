@@ -5,6 +5,7 @@ Q. What happens when you type google.com in browser?
 Ans:--> 
  - When we type `google.com` then the browser take the url and search in local cache if not found it search in OS cache then the local dns to find out if any ip address is attched to it or not.
  - If it fails to resolve the name locally, it goes to ISP(Internet Service Provider) resolver, if not found then it go to external DNS resolver server (TLD-Top Level Domain) to identify (name resolution).
+ - Accurate FLow:  Local Cache → OS Cache → Recursive DNS Resolver (ISP/Public DNS) → Root DNS → TLD DNS → Authoritative DNS Server → IP Address
 
 ### DNS Record Types
 |DNS Record| Meaning                                        |
