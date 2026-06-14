@@ -1,9 +1,14 @@
+# Day 17 – Shell Scripting: Loops, Arguments & Error Handling
+---
+
 ### Task 1: For Loop
 1. Create `for_loop.sh` that:
    - Loops through a list of 5 fruits and prints each one
 
+**Answer**
 
-```
+```bash
+
 #!/bin/bash
 
 fruits=("banana" "pineapple" "apple" "pomegranate" "orange")
@@ -23,6 +28,8 @@ orange
 
 2. Create `count.sh` that:
    - Prints numbers 1 to 10 using a for loop
+
+**Answer**
 
 ```
 #!/bin/bash
