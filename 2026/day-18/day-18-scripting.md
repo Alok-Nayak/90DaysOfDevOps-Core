@@ -1,4 +1,4 @@
-#Day 18 – Shell Scripting: Functions & intermediate Concepts
+# Day 18 – Shell Scripting: Functions & intermediate Concepts
 
 ## Challenge Tasks
 
@@ -7,6 +7,8 @@
    - A function `greet` that takes a name as argument and prints `Hello, <name>!`
    - A function `add` that takes two numbers and prints their sum
    - Call both functions from the script
+
+**Answer**
 
 ```bash
 
@@ -43,7 +45,8 @@ add
    - A function `check_memory` that checks free memory using `free -h`
    - A main section that calls both and prints the results
 
-## Answer:
+**Answer**
+
 ```bash
 
 #!/bin/bash
@@ -65,13 +68,14 @@ main(){
 }
 
 ```
----
 
 ### Task 3: Strict Mode — `set -euo pipefail`
 1. Create `strict_demo.sh` with `set -euo pipefail` at the top
 2. Try using an **undefined variable** — what happens with `set -u`?
 3. Try a command that **fails** — what happens with `set -e`?
 4. Try a **piped command** where one part fails — what happens with `set -o pipefail`?
+
+**Answer**
 
 **Document:** What does each flag do?
 - `set -e` → 
@@ -80,6 +84,8 @@ main(){
     - No Unset Variables. Treats references to undefined variables as an error.
 - `set -o pipefail` →
     - Pipeline Error Tracking. Changes the exit status of a pipeline to match the last command that returned a non-zero status. This ensures that if any command inside a pipe chain fails, the script catches it and halts, even if the final command succeeds.
+
+**Script**
 
 ```bash
 
@@ -125,7 +131,8 @@ echo "If you see this, the script didn't crash on the broken pipeline."
    - Show that `local` variables don't leak outside the function
    - Compare with a function that uses regular variables
 
-## Answer:
+**Answer**
+
 - Execution order dictates visibility.
 ```bash
 #!/bin/bash
@@ -147,6 +154,9 @@ greet
 echo""
 echo "After calling the greet function: $l_var + $f_var + $g_var"
 ```
+
+**Answer**
+
 ```OUTPUT:
 Before calling the greet function: +  + I Am Global Variable
 
@@ -167,7 +177,7 @@ Create `system_info.sh` that uses functions for everything:
 6. A `main` function that calls all of the above with section headers
 7. Use `set -euo pipefail` at the top
 
-Output should look clean and readable.
+**Answer**
 
 ```bash
 
