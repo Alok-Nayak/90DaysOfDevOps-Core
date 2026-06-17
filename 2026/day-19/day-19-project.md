@@ -80,6 +80,5 @@ perform_rotation(){
 
 create_backup
 perform_rotation
-alok-nayak@future:~/DevOps/workdi
 
 ```
