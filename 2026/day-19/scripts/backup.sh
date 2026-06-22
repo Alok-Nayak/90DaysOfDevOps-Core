@@ -6,11 +6,12 @@ set -euo pipefail
 
 This script for backup with 5day rotation.
 Useage: 
-./log_rotate.sh < source path > < destination path >
+./backup.sh <source/dir/path/to/take/backup> <destination/dir/path/to/keep/backup>
+
 readme
 
 display_usage(){
-	echo "Useage: ./log_rotate.sh <source path> <destination path> "
+	echo "Useage: ./backup.sh <source/dir/path/to/take/backup> <destination/dir/path/to/keep/backup> "
 }
 
 if [ $# -ne 2 ]; then
@@ -38,6 +39,7 @@ perform_rotation(){
 	backups=($(ls -t "${backup_dir}/backup_"*.tar.gz 2>/dev/null))
 
 	#echo ${backups[@]}  #Printing the backups array
+	
 	if  [ "${#backups[@]}" -gt $keep_backup_for_days  ]; then
 		echo "Performing rotation for 14 days..."
 
