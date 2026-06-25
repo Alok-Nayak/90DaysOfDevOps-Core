@@ -1,9 +1,12 @@
 #!/bin/bash
 
+date=$(date +%Y-%m-%d)
+echo $date
+
 # Task 1: Input and Validation
 
 LOG_FILE=$1
-LOG_LABEL=${2:-"ERROR"}
+LOG_LABEL=${2:-ERROR}
 
 if [ $# -eq 0 ]; then
         echo "Please provide the log file path as argument. e.g.: log_analyzer.sh  <path/to/log/file>"
@@ -28,4 +31,32 @@ echo ""
 echo "--- Top 5 $LOG_LABEL Messages ---"
 grep "\[$LOG_LABEL\]" "$LOG_FILE" | cut -d']' -f2 | cut -d'-' -f1 | sort | uniq -c | sort -rn | head -5
 echo " "
+
+# Task 5: Summary Report
+#
+REPORT_FILE="log_report_${date}.txt"
+
+echo "Generating report: $REPORT_FILE..."
+
+echo "" > "$REPORT_FILE"
+echo "--- Log Analysis Summary Report ---" >> "$REPORT_FILE"
+echo "" >>"$REPORT_FILE"
+echo "Date of analysis: $date" >> "$REPORT_FILE"
+echo "Log file name: $LOG_FILE" >> "$REPORT_FILE"
+echo "Total lines processed: $(wc -l < "$LOG_FILE")" >> "$REPORT_FILE"
+
+echo "Total error count: $(grep -ic "ERROR" "$LOG_FILE")" >> "$REPORT_FILE"
+echo "" >> "$REPORT_FILE"
+
+echo "--- Top 5 $LOG_LABEL Messages ---" >> "$REPORT_FILE"
+echo "" >> "$REPORT_FILE"
+grep "\[$LOG_LABEL\]" "$LOG_FILE" | cut -d']' -f2 | cut -d'-' -f1 | sort | uniq -c | sort -rn | head -5 >> "$REPORT_FILE"
+echo "" >> "$REPORT_FILE"
+
+echo "--- Critical Events with Line Numbers ---" >> "$REPORT_FILE"
+echo "" >> "$REPORT_FILE"
+grep -in "CRITICAL" "$LOG_FILE" >> "$REPORT_FILE"
+echo "" >> "$REPORT_FILE"
+
+echo "Report saved successfully!"
 
