@@ -1,0 +1,34 @@
+
+--- Log Analysis Summary Report ---
+
+Date of analysis: 2026-06-26
+Log file name: log_dir/linux.log
+Total lines processed: 300
+Total error count: 62
+
+--- Top 5 ERROR Messages ---
+
+     17  Segmentation fault 
+     17  Disk full 
+     12  Failed to connect 
+      8  Out of memory 
+      8  Invalid input 
+
+--- Critical Events with Line Numbers ---
+
+265:2026-06-23 11:22:18 [CRITICAL]  - 14626
+266:2026-06-23 11:22:18 [CRITICAL]  - 6175
+267:2026-06-23 11:22:18 [CRITICAL]  - 17267
+269:2026-06-23 11:22:18 [CRITICAL]  - 2653
+270:2026-06-23 11:22:18 [CRITICAL]  - 32028
+273:2026-06-23 11:22:18 [CRITICAL]  - 21671
+278:2026-06-23 11:22:18 [CRITICAL]  - 32445
+279:2026-06-23 11:22:18 [CRITICAL]  - 726
+286:2026-06-23 11:22:18 [CRITICAL]  - 4962
+287:2026-06-23 11:22:18 [CRITICAL]  - 11277
+289:2026-06-23 11:22:18 [CRITICAL]  - 25697
+292:2026-06-23 11:22:18 [CRITICAL]  - 30876
+295:2026-06-23 11:22:18 [CRITICAL]  - 16699
+298:2026-06-23 11:22:18 [CRITICAL]  - 12996
+299:2026-06-23 11:22:18 [CRITICAL]  - 26443
+
