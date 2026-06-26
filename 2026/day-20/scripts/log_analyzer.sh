@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+
+set -euo pipefail
 
 date=$(date +%Y-%m-%d)
 echo $date
@@ -59,4 +62,26 @@ grep -in "CRITICAL" "$LOG_FILE" | tail -15 >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
 
 echo "Report saved successfully!"
+
+
+
+# Task 6: Archive Processed Logs
+# 
+ARCHIVE_DIR="archive"
+#
+#
+if [ -d "$ARCHIVE_DIR" ]; then
+    echo "$ARCHIVE_DIR Directory exists."
+else
+    echo " '$ARCHIVE_DIR' Directory does not exist."
+    mkdir -p "$ARCHIVE_DIR"
+    echo " '$ARCHIVE_DIR' Dir created successfully."
+fi
+
+
+if mv "$LOG_FILE" "$ARCHIVE_DIR"; then
+    echo "Success: '$LOG_FILE' has been moved to '$ARCHIVE_DIR'"
+else
+    echo "Error: Failed to move log file to archive directory."
+fi
 
