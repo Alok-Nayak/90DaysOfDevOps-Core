@@ -139,4 +139,26 @@ Total error count: 62
 299:2026-06-23 11:22:18 [CRITICAL]  - 26443
 
 ```
+## commands/tools you use
+
+- `grep -ic` : Counts exactly how many times a word appears in the file, ignoring uppercase or lowercase differences.
+- `grep -in` : Finds lines matching a target word and prefixes each line with its exact line number.
+- `wc -l <` : Counts total lines in the file. Using < prints only the count number without the filename attached.
+- `cut -d']' -f2` : Splits lines at the ] bracket and shows only the second part (everything after the bracket).
+- `cut -d'-' -f1` : Cuts text at the first - hyphen and keeps only the first part, removing everything after it.
+- `sort` : Rearranges lines alphabetically so identical messages are grouped right next to each other.
+- `uniq -c` : Merges duplicate lines together and prefixes them with a count of how many times they repeated.
+- `sort -rn` : Sorts lines numerically in reverse order so the highest count appears at the very top.
+- `head -5` : Selects and prints only the first 5 lines from the top of the output stream.
+- `tail -15` : Selects and prints only the last 15 lines from the bottom of the output stream.
+
+## What I Learned
+
+- 1. Variable placement matters with strict mode: When using set -u, you cannot test a variable or check if a file exists before you actually define it. You must check argument counts first, assign the variable, and only then test it.
+
+- 2. File overriding vs appending: Using a single > clears out the file and writes a fresh line from scratch, while using >> appends new text cleanly at the bottom without deleting what was already there.
+
+- 3. Piping utilities to filter data: I learned that connecting simple tools using pipes (|) lets you clean up complex text step-by-step—first searching, then cutting, sorting, counting, and finally limiting the output.
+
+
 
