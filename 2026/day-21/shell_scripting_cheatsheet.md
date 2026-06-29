@@ -88,8 +88,28 @@ fi
 
 ``` 
 
-
 5. Logical operators — `&&`, `||`, `!`
+
+- Used to combine multiple conditions together (&& for AND, || for OR) or invert a condition (! for NOT).
+```bash
+
+# Both conditions must be true (AND)
+if [ "$USER" = "admin" ] && [ "$ENV" = "prod" ]; then
+    echo "Access granted to production infrastructure."
+fi
+
+# At least one condition must be true (OR)
+if [ "$DEPLOY_STATUS" = "failed" ] || [ "$FORCE_ROLLBACK" = "true" ]; then
+    echo "Initiating immediate rollback..."
+fi
+
+# Reverses the result (NOT) - true if the directory does NOT exist
+if [ ! -d "/var/log/nginx" ]; then
+    echo "Nginx log directory is missing!"
+fi
+
+```
+
 6. Case statements — `case ... esac`
 
 ---
